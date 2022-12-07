@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Encriptar y desencriptar información con JavaScript - By Parzibyte</title>
+	<link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="bg-slate-100">
+	<main class="w-full m-auto w-2/3 p-3">
+		<h1 class="text-5xl font-bold p-2 mb-3 uppercase">
+			<span class="text-indigo-600">De</span>coder <span class="text-indigo-600">AES</span>
+		</h1>
+		<h2 class="text-3xl font-bold text-indigo-600 px-2 mb-1">Encoder</h2>
+		<div id="input-error-pass1" class="px-2 mb-3"></div>
+		<div class="px-2 mb-3">
+			<label class="uppercase" for="passwordToEncrypt">password:</label>
+			<input
+				id="passwordToEncrypt"
+				class="w-full rounded-md px-3 py-2 text-base border-solid border-2 border-sky-500 bg-white"
+				type="password"
+				placeholder="Password"
+			>
+		</div>
+		<div id="textarea-encrypt-error" class="px-2 mb-3"></div>
+		<div class="grid grid-rows-1 grid-cols-2 gap-4">
+			<div class="px-2 mb-3">
+				<label class="uppercase">Information to be encrypted:</label>
+				<section>
+					<textarea
+						id="infoToBeEncrypted"
+						class="w-full rounded-md px-3 py-2 text-base border-solid border-2 border-sky-500 resize-none h-32 bg-white"
+						placeholder="Encrypt string, character, number, json, etc.">
+					</textarea>
+				</section>
+				<div class="mt-2">
+					<button
+						class="px-3 py-2 rounded-md text-white text-base bg-indigo-500 hover:bg-indigo-600 uppercase"
+						id="btnEncrypt"
+					>
+						Encrypt
+					</button>
+					<button
+						class="px-3 py-2 rounded-md text-white text-base bg-red-500 hover:bg-red-600 uppercase"
+						id="btnCancelEncrypt"
+					>
+						clear
+					</button>
+				</div>
+			</div>
+			<div class="px-2 mb-3">
+				<label class="uppercase">Result:</label>
+				<section>
+					<textarea
+						disabled
+						id="encryptionResult"
+						class="w-full rounded-md px-3 py-2 text-base border-solid border-2 border-sky-500 resize-none bg-white h-32">
+					</textarea>
+				</section>
+			</div>
+		</div>
+
+
+		<h2 class="text-3xl font-bold text-indigo-600 px-2 mb-1">Decoder</h2>
+		<div id="input-error-pass2" class="px-2 mb-3"></div>
+		<div class="px-2 mb-3">
+			<label class="uppercase" for="passwordToDecrypt">Password:</label>
+			<input 
+				id="passwordToDecrypt"
+				class="w-full rounded-md px-3 py-2 text-base border-solid border-2 border-sky-500 bg-white"
+				type="password"
+				placeholder="Password"	
+			>
+		</div>
+		<div id="textarea-decrypt-error" class="px-2 mb-3"></div>
+		<div class="grid grid-rows-1 grid-cols-2 gap-4">
+			<div class="px-2 mb-3" >
+				<label class="uppercase">Hash:</label>
+				<section>
+					<textarea
+						id="infoToBeDecrypted"
+						class="w-full rounded-md px-3 py-2 text-base border-solid border-2 border-sky-500 resize-none bg-white h-32 w-full"
+						placeholder="Hash in base 64"></textarea>
+				</section>
+				<div class="mt-2">
+					<button
+						class="px-3 py-2 rounded-md text-white text-base bg-indigo-500 hover:bg-indigo-600 uppercase"
+						id="btnDecrypt"
+					>
+						Decrypt
+					</button>
+					<button
+						class="px-3 py-2 rounded-md text-white text-base bg-red-500 hover:bg-red-600 uppercase"
+						id="btnCancelDecrypt"
+					>
+						clear
+					</button>
+				</div>
+			</div>
+			<div class="px-2 mb-3">
+				<label class="uppercase">Result:</label>
+				<section>
+					<textarea
+						disabled
+						id="decryptionResult"
+						class="w-full rounded-md px-3 py-2 text-base border-solid border-2 border-sky-500 resize-none bg-white h-32">
+					</textarea>
+				</section>
+			</div>
+		</div>
+	</main>
+</body>
+<script type="module" src="./js/index.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+</html>
